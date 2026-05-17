@@ -136,16 +136,14 @@ The behavior successfully triggered the scheduled query analytics rule configure
 
 # 📸 Incident Closure
 
-<img src="screenshots/Alert-resolution.png" width="100%">
-<img src="screenshots/Inc-resolution.png" width="100%">
+<img src="screenshots/Alert-resolved.png" width="40%">
+<img src="screenshots/Inc-resolved.png" width="80%">
 
 ---
 
 # 📌 Analyst Notes
 
-```text
 The incident was investigated through Microsoft Defender and Microsoft Sentinel telemetry sources. Advanced hunting and alert correlation did not identify evidence of successful compromise, persistence, or additional malicious activity. The observed activity was consistent with controlled authentication failure simulations conducted within the lab environment.
-```
 
 ---
 
