@@ -46,12 +46,6 @@ The following entities identified during investigation were used as pivot points
 
 ---
 
-# 📸 Affected Entities
-
-<img src="screenshots/affected-assets.png" width="100%">
-
----
-
 # 📌 0. Validating Alerts Using Defender XDR Hunting Tables
 
 Before proceeding with advanced hunting, the generated incident alerts were validated using Microsoft Defender XDR hunting tables.
@@ -95,7 +89,7 @@ This query validates:
 
 ## 📸 AlertInfo Validation
 
-<img src="screenshots/Q-1.png" width="100%">
+<img src="screenshots/Q-1.png" width="80%">
 
 ---
 
@@ -126,7 +120,7 @@ This query helps identify:
 
 ## 📸 AlertEvidence Validation
 
-<img src="screenshots/Q-2.png" width="100%">
+<img src="screenshots/Q-2.png" width="80%">
 
 ---
 
@@ -161,7 +155,7 @@ This provides a more complete investigation context during advanced hunting work
 
 ## 📸 Alert Correlation Validation
 
-<img src="screenshots/Q-3.png" width="100%">
+<img src="screenshots/Q-3.png" width="80%">
 
 ---
 
@@ -195,7 +189,7 @@ This query helps identify:
 
 ## 📸 Authentication Activity Hunt
 
-<img src="screenshots/hunt-auth-activity.png" width="100%">
+<img src="screenshots/AQ-1.png" width="80%">
 
 ---
 
@@ -228,7 +222,7 @@ This query validates:
 
 ## 📸 Failed Login Hunt
 
-<img src="screenshots/hunt-failed-logins.png" width="100%">
+<img src="screenshots/AQ-2.png" width="80%">
 
 ---
 
@@ -259,7 +253,7 @@ This query helps determine:
 
 ## 📸 Successful Login Validation
 
-<img src="screenshots/hunt-success-validation.png" width="100%">
+<img src="screenshots/AQ-3.png" width="80%">
 
 ---
 
@@ -291,44 +285,12 @@ This query helps analysts:
 
 ## 📸 Device Activity Hunt
 
-<img src="screenshots/hunt-device-activity.png" width="100%">
+<img src="screenshots/AQ-4.png" width="80%">
 
 ---
 
-# 📌 5. Timeline-Based Threat Hunting
 
-Timeline-based hunting was performed to understand the sequence of events occurring around the incident timeframe.
-
-## 📌 KQL Query
-
-```kql
-SecurityEvent
-| where Computer == "Pavan-VM-Window"
-| where TimeGenerated > ago(1h)
-| project TimeGenerated, EventID, Account, Activity
-| sort by TimeGenerated asc
-```
-
----
-
-## 📌 Purpose
-
-Timeline analysis helps:
-
-- reconstruct attack progression
-- identify event sequence
-- correlate suspicious activity
-- validate incident context
-
----
-
-## 📸 Timeline Hunting
-
-<img src="screenshots/hunt-timeline.png" width="100%">
-
----
-
-# 📌 6. Hunting Related Alerts
+# 📌 5. Hunting Related Alerts
 
 Additional hunting was performed against alert tables to identify whether the affected user or device was associated with other security alerts.
 
@@ -337,7 +299,7 @@ Additional hunting was performed against alert tables to identify whether the af
 ```kql
 SecurityAlert
 | where CompromisedEntity contains "Pavan"
-| project TimeGenerated, AlertName, Severity, Status
+| project TimeGenerated, AlertName, AlertSeverity, Status
 | sort by TimeGenerated desc
 ```
 
@@ -356,11 +318,11 @@ This query helps identify:
 
 ## 📸 Related Alerts Hunt
 
-<img src="screenshots/hunt-related-alerts.png" width="100%">
+<img src="screenshots/AQ-5.png" width="80%">
 
 ---
 
-# 📌 7. Investigating Incidents Through SecurityIncident Table
+# 📌 6. Investigating Incidents Through SecurityIncident Table
 
 Incident telemetry was also validated directly through Sentinel incident tables.
 
@@ -387,7 +349,7 @@ This query validates:
 
 ## 📸 SecurityIncident Hunt
 
-<img src="screenshots/hunt-securityincident.png" width="100%">
+<img src="screenshots/AQ-6.png" width="80%">
 
 ---
 
