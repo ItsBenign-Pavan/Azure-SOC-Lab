@@ -25,7 +25,7 @@ The dashboard focuses on Windows failed login events (`EventID 4625`) to help vi
 
 # 📸 Workbook Overview
 
-<img src="screenshots/workbook-overview.png" width="100%">
+<img src="screenshots/w1.0.png" width="100%">
 
 ---
 
@@ -64,7 +64,7 @@ This visualization helps identify:
 
 ## 📸 Failed Login Timeline
 
-<img src="screenshots/failed-login-timeline.png" width="100%">
+<img src="screenshots/w1.1.png" width="100%">
 
 ---
 
@@ -103,7 +103,7 @@ This visualization helps analysts:
 
 ## 📸 Top Targeted Accounts
 
-<img src="screenshots/top-targeted-accounts.png" width="100%">
+<img src="screenshots/w1.2.png" width="100%">
 
 ---
 
@@ -143,7 +143,7 @@ This visualization helps analysts:
 
 ## 📸 Latest Failed Login Events
 
-<img src="screenshots/latest-failed-logins.png" width="100%">
+<img src="screenshots/w1.3.png" width="100%">
 
 ---
 
@@ -181,7 +181,7 @@ This visualization helps analysts:
 
 ## 📸 Failed Attempts by Device
 
-<img src="screenshots/failed-attempts-device.png" width="100%">
+<img src="screenshots/w1.4.png" width="100%">
 
 ---
 
